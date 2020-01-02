@@ -27,17 +27,49 @@
                 数量: <input type="number" name="btn1"/>
             </li>
             <li>
-                手机号码: <input type="tel" name="btn1"/>
+                手机号码: <input type="tel" name="btn1" list="tel_list"/>
+                <datalist id="tel_list">
+                    <option value="18606077110"></option>
+                    <option value="18606077111"></option>
+                    <option value="18606077112"></option>
+                </datalist>
             </li>
             <li>
                 搜索:<input type="search" name="btn1"/>
             </li>
             <li>
-                颜色:<input type="search" name="btn1"/>
+                颜色:<input type="color" name="btn1"/>
+            </li>
+            
+            <li>
+                <!-- 
+                    required 属性规定必需在提交之前填写输入字段。
+                    placeholder 默认值
+                -->
+                用户名: <input type="text" required="required" placeholder="请输入用户名" autofocus="autofocus" name="username" autocomplete="off"> 
+
+            </li>
+            <li>
+                 <!-- 用户选择文件 -->
+                上传头像: 
+                <input type="file" name="" id="" multiple="multiple">
+            </li>
+            <li>
+
+                  <!-- datalist 是下拉选项,自动会在输入框下方显示指定的一组数据 -->
+            
+            链接: <input type="url" list="url_list" name="link">
+            <datalist id="url_list">
+                <option value="http://www.baidu.com"></option>
+                <option value="http://www.jianshu.com"></option>
+                <option value="http://www.souhu.com"></option>
+            </datalist>
+
             </li>
             <li>
                 <input type="submit" value="提交" name="btn1"/>
             </li>
+
         </ul>
        
        

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3属性选择器</title>
+    <style>
+        /* 获取button 标签中属性为disabled */
+        button[disabled]{
+            color: red;
+        }
+        /* *= 表示的是 属性值中只要包含了 什么  就可以选择 */
+        /* = 表示 属性值中必须为什么 才可以选择 */
+        /* ^= 表示属性值中必须以什么开头 才可以选择 */
+        /* $= 表示属性值中必须以什么结尾 才可以选择 */
+        button[name *= "btn" ]{
+            color: seagreen;
+        }
+
+        button[name $= "btn1" ]{
+            color: yellow;
+        }
+
+        button[name ^= "1btn" ]{
+            color: blue;
+        }
+        /* 
+        id 选择器的权重为  100
+        class 选择器的权重为 10
+        标签选择器的权重为  1
+        属性选择器的权重为  10 
+        */
+        button{
+            color:blueviolet;
+        }
+
+        button.btnn{
+            color: chocolate;
+        }
+    
+    </style>
+</head>
+<body>
+    <button disabled = "disabled">
+        提交
+    </button>
+
+    <button name="btn1">
+        提交2
+    </button>
+
+    <button name="btn2">
+        提交3
+    </button>
+
+    <button name="btn1">
+        提交4
+    </button>
+
+    <button name="1btn1">
+        提交5
+    </button>
+
+    <button name="2btn1">
+        提交6
+    </button>
+
+    <button name="1btn2">
+        提交7
+    </button>
+
+    <button name="2btn2" class="btnn">
+        提交8
+    </button>
+
+    <button name="3bttn2">
+        提交9
+    </button>
+</body>
+</html>

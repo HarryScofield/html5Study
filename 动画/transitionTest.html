@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition使用</title>
+</head>
+<style>
+    /* transition   过渡  
+        顾名思义,是会让用户看到一个变化的效果,transition 是需要有某个事件触发之后才会执行
+        transition: all .3s;
+        all 表示所有的属性都过渡变化为触发事件执行后的效果
+        例如:
+        input:hover{
+            width: 200px;
+            height: 32px;
+        }
+        那么如果transition 的第一个参数是all  则宽度 跟高度都会进行过渡
+        如果transition 的第一个参数是width 则只有宽度才会过渡. 高度会直接变为32px
+        如果transition 的第一个参数是color 则当前代码中无效果. 因为触发事件执行的代码中 没有对color 属性做任何变化
+    */
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        transition: all .3s;
+    }
+    div:focus{
+        width: 200px;
+    }
+
+    input{
+        width: 100px;
+        height: 32px;
+        transition: all 1s;
+        color: black;
+    }
+
+    input:hover{
+        width: 200px;
+        height: 32px;
+        color: red;
+    }
+
+</style>
+
+
+<body>
+    <div>
+
+    </div>
+
+    <input type="text" value="hahahahah"/>
+
+    <script>
+        var inputV = document.querySelector("input");
+        // inputV.onmouseover = function(){
+        //     inputV.style.width = "400px";
+        //     inputV.style.height = "32px";
+        // }
+    </script>
+</body>
+</html>

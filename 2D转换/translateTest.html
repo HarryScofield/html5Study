@@ -8,22 +8,42 @@
     <style>
 
         div{
-            width: 300px;
-            height: 100px;
+            width: 500px;
+            height: 500px;
             background-color:blue;
              /* x就是x轴上移动位置 y 就是y轴上移动位置 中间用逗号分隔*/
             /* transform: translate(x, y); */
             /* transform:translate(200px ,200px); */
             /* transform: translateX(100px); */
             /* 注意 translateX 与 translateY 不能同时写,如果同时写,那么就只会执行最后一行 */
-            transform: translateY(100px);
+            /* transform: translateY(100px); */
+            position: relative;
             
+        }
+        /* translate 可以使用百分号,但百分比是针对自身的. 所以可以用来作为居中效果 */
+        p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color:red;
+
+            transform: translate(-50%,-50%);
+        }
+        /* translate 对行内元素无效 */
+        span{
+            transform: translate(300px,200px);
         }
     </style>
 </head>
 <body>
     <div>
+        <p>
+
+        </p>
         
     </div>
+    <span>123</span>
 </body>
 </html>

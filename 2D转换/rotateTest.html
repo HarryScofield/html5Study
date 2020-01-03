@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>旋转</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+            
+            transition: all 5s;
+        }
+        /* rotate(旋转度数) 
+         度数必须要加deg  360度为转一圈,如果大于360 那么就是转一圈后再转剩余的度数
+         正数表示顺时针旋转,负数表示逆时针旋转
+         */
+        div:hover{
+            transform: rotate(370deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>旋转三角图标</title>
     <style>
-        @font-face {
+         @font-face {
             font-family: "iconfont";
             src: url('font/iconfont.eot?t=1578018832291');
             /* IE9 */
@@ -20,33 +19,47 @@
                 url('font/iconfont.svg?t=1578018832291#iconfont') format('svg');
             /* iOS 4.1- */
         }
-
-        div {
-            width: 300px;
-            height: 32px;
-            position: relative;
-            border: 1px solid #999999;
-        }
-
-        span::after {
-            content: '\e612';
-            position: absolute;
-          
-            right: 10px;
-            line-height: 32px;
+        .iconfont{
             font-family: "iconfont" !important;
             font-size: 16px;
             font-style: normal;
              -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
+        div{
+            width: 200px;
+            height: 32px;
+            border: 1px solid #999999;
+            position: relative;
+        }
+
+
+        div::after{
+            content: '\e612';
+            display: inline-block;
+            position: absolute;
+            line-height: 32px;
+            right: 10px;
+            transform: rotate(-90deg);
+            transition: all .3s;
+        }
+        
+        /* 注意:想要给aftere或者before伪类添加过渡,那么需要在div:hover后 加上::after 
+           这里表示的是当鼠标经过div 的时候,对div 里面的after伪类进行改变
+        */
+        div:hover::after{
+            transform: rotate(0deg);
+        }
+
+        
+        
+
     </style>
 </head>
-
 <body>
     <div class="iconfont">
-       <span></span>
+
     </div>
 </body>
-
 </html>

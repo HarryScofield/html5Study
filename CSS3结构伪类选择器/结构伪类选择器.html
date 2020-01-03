@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结构伪类选择器</title>
+
+</head>
+
+<body>
+
+    <!-- <span>5</span> -->
+    <a href="#">3</a>
+    <a href="#">4</a>
+
+    <div class="link">
+        <span>3</span>
+        <a href="#">1</a>
+        <a href="#">2</a>
+    </div>
+    <ul>
+        <li><span>one</span></li>
+        <li><span>two</span></li>
+        <li><span>three</span></li>
+        <li><span>four</span></li>
+        <li><span>five</span></li>
+        <li><span>six</span></li>
+        <li><span>seven</span></li>
+        <li><span>eight</span></li>
+    </ul>
+
+    <div class="s2">
+        <p>1p</p>
+        <span>2s</span>
+        <span>3s</span>
+        <span>4s</span>
+        <span>5s</span>
+        <span>6s</span>
+    </div>
+
+    <ul>
+        <li>
+            nine
+        </li>
+
+    </ul>
+
+    <li>
+        ten
+    </li>
+
+    <li>
+        12
+    </li>
+
+
+    <style>
+        /* 
+
+        */
+        /* ul li:first-child {
+            color: red;
+        } */
+        /* 
+        ul li:last-child{
+            color: yellow;
+        } */
+        li:last-child {
+            color: blue;
+        }
+
+        li:first-child {
+            color: red;
+        }
+
+        /* 
+        选择  .link 下的第一个子元素,并且该子元素要为a
+        */
+        .link a:first-child {
+            color: red;
+        }
+
+        /* 
+        所有 下的第一个子元素,并且该子元素要为a
+        */
+        a:first-child {
+            color: goldenrod;
+        }
+
+        /* 如果是类,则冒号与类名之间要有空格 */
+        .link :first-child {
+            color: maroon;
+        }
+
+        /* 如果是id,则冒号与类名之间不能有空格 */
+        #nine:first-child {
+            color: green;
+        }
+
+        /* 
+        选取ul 下的li 当为奇数行的时候才会被选中 
+        注意:此时如果没有写 ul 那么 li 就是指HTML 下的所有的li 
+        */
+        /* ul li:nth-child(odd){
+            background-color: pink;
+          
+        }
+
+        ul li:nth-child(even){
+            background-color: white;
+        } */
+
+        /* 所有元素 下的奇数子元素,且子元素为a */
+        a:nth-child(odd) {
+            background-color: pink;
+        }
+
+        /* 
+            所有元素 下的第6个子元素 且子元素要为 li  
+            但由于前面已经有设置了 ul li:nth-child() 其权限为11 所以以下代码被覆盖了.
+        */
+        li:nth-child(6) {
+            background-color: yellow;
+        }
+
+
+        /* 所有标签下 的第一个li元素 */
+        ul li:nth-of-type(8) {
+            background-color: cornflowerblue;
+        }
+
+        /* div 标签下的第一个子元素 且为p 标签的时候选中 */
+        div p:nth-child(1) {
+            background-color: red;
+        }
+
+        .s2 :nth-child(5) {
+            background-color: blue;
+        }
+
+        /* 表示所有的标签下的第三个span子元素 */
+        span:nth-of-type(4) {
+            background-color: yellow;
+        }
+    </style>
+</body>
+
+</html>

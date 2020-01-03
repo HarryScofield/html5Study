@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片放大案例</title>
+    <style>
+        div{
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            left: 50%;
+            
+            overflow: hidden;
+            float: left;
+            
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: all .3s;
+        }
+        img:hover{
+            transform: scale(1.5);
+        }
+        
+        .div1{
+            margin-left:-770px;
+        }
+        .div2{
+            margin-left:-250px;
+        }
+        .div3{
+            margin-left:270px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+       <img src="http://inews.gtimg.com/newsapp_bt/0/8493146771/640" alt="">
+    </div>
+    <div class="div2">  
+       <img src="http://inews.gtimg.com/newsapp_bt/0/8493146771/640" alt="">
+    </div>
+    <div class="div3"> 
+       <img src="http://inews.gtimg.com/newsapp_bt/0/8493146771/640" alt="">
+    </div>
+</body>
+</html>

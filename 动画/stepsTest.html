@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>steps案例</title>
+    <style>
+        div{
+            overflow: hidden;
+            width: 0px;
+            height: 30px;
+            font-size: 20px;
+            white-space: nowrap;
+            animation: showText 3s steps(8) forwards;
+            
+        }
+
+        @keyframes showText{
+            0%{
+                width: 0px;
+            }
+
+            100%{
+                width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        这是一个步长动画
+    </div>
+</body>
+</html>

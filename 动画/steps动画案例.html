@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>steps动画案例</title>
+    <style>
+        body {
+            background-color: #333333;
+        }
+
+        .xueshanBox {
+            width: 3840px;
+            height: 569px;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            bottom: 20%;
+           
+            /* opacity: 1; */
+            
+            
+            /* transition: opacity 0.2s linear 0s; */
+           
+           
+            /* transform-origin: center; */
+
+        }
+
+        .xueshan {
+            background: url(images/bg1.png) repeat-x;
+            /* background-size: auto 100%; */
+            overflow: hidden;
+            width: 7680px;
+            left: 0%;
+            height: 569px;
+            transform-origin: center; 
+           
+            animation: xueshanRun 10s linear 0.8s infinite normal none;
+
+        }
+
+        .bear {
+            position: absolute;
+            top: 40%;
+            left: 0px;
+            width: 200px;
+            height: 100px;
+            background: url(images/bear.png) no-repeat;
+            animation: run 1s steps(8) infinite forwards, move 4s ease forwards;
+        }
+
+        @keyframes run {
+            0% {
+                background-position: 0;
+            }
+
+            100% {
+                background-position: -1600px 40%;
+            }
+        }
+
+        @keyframes move {
+            0% {}
+
+            100% {
+                left: 50%;
+                top: 40%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @keyframes xueshanRun {
+            0% {
+                /* transform: translate(0%, 0); */
+            }
+            100% {
+                transform: translate(-50%, 0); 
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="xueshanBox">
+        <div class="xueshan">
+
+        </div>
+    </div>
+
+    <div class="bear">
+
+    </div>
+
+
+</body>
+
+</html>

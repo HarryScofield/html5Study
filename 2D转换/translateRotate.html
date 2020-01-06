@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>translate和rotate合并</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color:red;
+            transition: all .5s;
+        }
+        /* 如果遇到合并需求,那么必须要位移放在最前面,旋转放到后面,否则旋转后,DOM元素会判断不了方向 */
+        div:hover{
+            transform: translate(300px,200px) rotate(90deg)  scale(2)  ;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

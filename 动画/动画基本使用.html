@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画的基本使用</title>
+    <style>
+        /* 定义动画 */
+        /* 动画与过渡的区别 
+            动画:页面一加载完成就调用
+            过渡:需要有事件触发
+        */
+        
+        @keyframes toRight {
+
+            /* 开始状态 */
+            /* 动画序列 */
+            /* 1. 可以做多个状态的变化 keyframe 关键帧 */
+            /* 2. 里面的百分比要是整数 */
+            /* 3. 里面的百分比就是 总的时间（我们这个案例10s）的划分 25% * 10  =  2.5s */
+            0% {
+                transform: translate(0px);
+            }
+
+            25.5% {
+                transform: translateX(100px);
+            }
+
+            /* 注意:所有的动画相对位置都是最初始时的位置,所以不能以变化后的DOM的位置作为判断位置 */
+            50% {
+                transform: translate(100px, 100px);
+            }
+
+            75% {
+                transform: translate(0px, 100px);
+            }
+
+            100% {
+                transform: translate(0px);
+            }
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            /* 调用动画 */
+            animation-name: toRight;
+            animation-duration: 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

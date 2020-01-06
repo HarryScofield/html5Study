@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes toRight {
+
+           0% {
+                transform: translate(0px);
+            }
+
+            25% {
+                transform: translateX(100px);
+            }
+
+            50% {
+                transform: translate(100px, 100px);
+            }
+
+            100% {
+                transform: translate(0px, 100px);
+            }
+
+            /* 100% {
+                transform: translate(0px);
+            } */
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            /* 调用动画 */
+            animation-name: toRight;
+            /* 总时间 */
+            animation-duration: 3s;
+            /* 延迟多久开始 */
+            animation-delay: 1s;
+            /*  重复次数  iteration 重复的 conut 次数  infinite  无限  
+                使用了无限循环后,第二执行动画就不会delay 了 而是直接开始
+            */
+            /* animation-iteration-count: 3; */
+            /* animation-iteration-count: infinite; */
+            /* 动画播放样式
+                ease:淡入淡出(低速开始,然后加快,最后放缓) 默认的
+                ease-in:淡入不淡出(低速开始)
+                ease-out:淡出不淡入(低速结束)
+                linear :匀速
+                cubic-bezier(n,n,n,n) 	在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+             
+                cubic-bezier(n,n,n,n)  4个n(只能4个n) 表示4个时间段的值,如果为0 则为匀速,递增为加速多少
+             */
+            animation-timing-function: ease-in;
+            
+            /* animation-timing-function: cubic-bezier(0,.8,.5,.1); */
+
+            /* 是否反方向播放 默认的是 normal  如果想要反方向 就写 alternate */
+            /* animation-direction: alternate; */
+
+            /* 动画结束后的状态 默认的是 backwards  回到起始状态 我们可以让他停留在结束状态 forwards */
+            animation-fill-mode: forwards;
+
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: move 2s linear 0s 1 alternate forwards; */
+            /* 前面2个属性 name  duration 一定要写 */
+            /* animation: move 2s linear  alternate forwards; */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

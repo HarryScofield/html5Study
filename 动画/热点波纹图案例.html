@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>热点波纹图案例</title>
+    <style>
+        body{
+            background-color: #333333;
+        }
+        .map{
+            margin: 0 auto;
+            width: 747px;
+            height: 617px;
+            position: relative;
+            background: url(images/map.png) no-repeat;
+        }
+        
+        .city{
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            top: 227px;
+            right: 193px;
+            color: #fff;
+        }
+
+        .tb{
+            top: 500px;
+            right: 80px;
+        }
+
+        .dotted{
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #0099ff;
+            border-radius: 50%;
+        }
+
+        /* 这里的权重为 21  因为 类选择器 10  div 1  属性选择器 10 */
+        /*
+            注意: 在动画中改变宽度及高度是以中心点为基础进行改变的.  默认中心点在左上角
+            transform: translate(-50%,-50%); 往上（x轴）,左（y轴）移动自身长宽的 50%，以使其居于中心位置
+
+         */
+        .city div[class ^='pulse']{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #009dfd;
+            /* 定义圆角 */
+            border-radius: 50%;
+            animation: pulse 1.2s linear infinite;
+        }
+
+        /* .city div 是为了增加权重的. 如果不加 则权重不会高于上面的属性选择器.  */
+        .city div.pulse2{
+            animation-delay: .4s;
+        }
+
+        .city div.pulse3{
+            animation-delay: .8s;
+        }
+
+      
+
+        @keyframes pulse {
+            50%{
+                width: 40px;
+                height: 40px;
+                /* 定义透明度 */
+                opacity: 1; 
+
+            }
+
+            100%{
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+</html>
